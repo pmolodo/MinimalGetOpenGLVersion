@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.0)
+project("MinimalGetOpenGLVersion")
+set(exe_name "GetOpenGLVersion")
+add_executable("${exe_name}" "main.cpp")
+
+IF (WIN32)
+    target_link_libraries(${exe_name} "opengl32")
+ELSE (WIN32)
+    target_link_libraries(${exe_name} "GL" "X11")
+ENDIF (WIN32)
